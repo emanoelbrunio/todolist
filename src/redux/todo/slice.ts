@@ -24,8 +24,6 @@ export const userSlice = createSlice({
       return updatedTasks;
     },
     deleteTask: (state, action) => {
-      console.log("alo");
-
       const indexDelete = state.findIndex((todo) => todo.id === action.payload);
       if (indexDelete !== -1) {
         state.splice(indexDelete, 1);
