@@ -6,34 +6,34 @@ import IconButton from "@mui/material/IconButton";
 
 import { styled } from "@mui/material/styles";
 
-export const SFormControl = styled(FormControl)(() => ({
+export const SFormControl = styled(FormControl)(({ theme }) => ({
   width: "100%",
-  background: "#424242",
+  background: `${theme.palette.background.paper}`,
   borderTopLeftRadius: "12px",
   borderTopRightRadius: "12px",
 }));
 
-export const SInputLabel = styled(InputLabel)(() => ({
+export const SInputLabel = styled(InputLabel)(({ theme }) => ({
   width: "100%",
-  color: "#9B9B9B",
+  color: `${theme.palette.text.primary}`,
 
   fontSize: "18px",
   "&.Mui-focused": {
-    color: "#056CF2",
+    color: `${theme.palette.text.primary}`,
   },
 }));
 
-export const SFilledInput = styled(FilledInput)(() => ({
+export const SFilledInput = styled(FilledInput)(({ theme }) => ({
   width: "100%",
-  color: "#fff",
+  color: `${theme.palette.text.primary}`,
 
   "&:after": {
-    borderBottomColor: "#056CF2",
+    borderBottomColor: `${theme.palette.primary.main}`,
   },
 }));
 
-export const SInputAdornment = styled(InputAdornment)(() => ({
-  color: "#fff",
+export const SInputAdornment = styled(InputAdornment)(({ theme }) => ({
+  color: `${theme.palette.text.primary}`,
 }));
 
 export const SIconButton = styled(IconButton)(() => ({

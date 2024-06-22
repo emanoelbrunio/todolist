@@ -1,18 +1,16 @@
 import * as Styled from "./style";
 
-type TypeInput = {
-  label: string;
+type TypeTextArea = {
   value: string;
   handleChangeValue: (e: string) => void;
 };
-
-export default function Input({ label, value, handleChangeValue }: TypeInput) {
+export default function TextArea({ value, handleChangeValue }: TypeTextArea) {
   return (
-    <Styled.STextField
+    <Styled.STextarea
       required
-      id="filled-required"
-      label={label}
-      variant="filled"
+      maxRows={5}
+      placeholder="Descrição *"
+      minRows={5}
       value={value}
       onChange={(e) => handleChangeValue(e.target.value)}
     />

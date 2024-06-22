@@ -9,7 +9,6 @@ type typeSButton = {
 
 export const SButtonGroup = styled(ButtonGroup)(() => ({
   width: "100%",
-
   display: "flex",
 }));
 
@@ -32,6 +31,7 @@ export const SContainer = styled(Box)(() => ({
   flexDirection: "column",
   gap: "20px",
 }));
+
 export const SContent = styled(Box)(() => ({
   display: "flex",
   width: "100%",

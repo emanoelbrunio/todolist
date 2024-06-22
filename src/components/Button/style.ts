@@ -1,20 +1,36 @@
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import { Link } from "react-router-dom";
 
 type typeMyButton = {
-  active: boolean;
+  active?: boolean;
+  notBackground?: boolean;
 };
 
-export const MyButton = styled(Button)(({ active }: typeMyButton) => ({
-  backgroundColor: `${active ? "#056CF2" : "#056CF250"}`,
-  color: "#fff",
-  fontSize: "16px",
-  fontWeight: "bold",
-  width: "100%",
-  padding: "12px",
-}));
+export const MyButton = styled(Button)(
+  ({ theme, active, notBackground }: typeMyButton) => ({
+    backgroundColor: `${
+      notBackground
+        ? "none"
+        : active
+        ? `${theme.palette.primary.main}`
+        : `${theme.palette.primary["500"]}`
+    }`,
+    color: `${
+      notBackground
+        ? `${theme.palette.text.disabled}`
+        : `${theme.palette.text.primary}`
+    }`,
+    fontSize: "16px",
+    fontWeight: `${notBackground ? "400" : "700"}`,
+    width: "100%",
+    padding: "12px",
+    borderRadius: "12px",
+    border: "none",
 
-export const SLink = styled(Link)(() => ({
-  width: "100%",
-}));
+    "&:hover": {
+      border: "none",
+      background: `${"#ABCFFF80"}`,
+      color: `${theme.palette.text.primary}`,
+    },
+  })
+);

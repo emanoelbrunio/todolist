@@ -1,16 +1,25 @@
-import * as S from "./style";
+import * as Sytyled from "./style";
 
 type TypeButtonCta = {
   title: string;
-  active: boolean;
+  active?: boolean;
+  notBackground?: boolean;
+  handleClick?: () => void;
 };
 
-export default function ButtonCta({ title, active }: TypeButtonCta) {
+export default function ButtonCta({
+  title,
+  active,
+  notBackground,
+  handleClick,
+}: TypeButtonCta) {
   return (
-    <S.SLink to={"/Home"}>
-      <S.MyButton variant="contained" active={active}>
-        {title}
-      </S.MyButton>
-    </S.SLink>
+    <Sytyled.MyButton
+      active={active}
+      notBackground={notBackground}
+      onClick={handleClick}
+    >
+      {title}
+    </Sytyled.MyButton>
   );
 }
